@@ -1,5 +1,5 @@
 'use strict';
-//mostrar modal
+//show modal
 function showModal(){
   let modal = document.querySelector('.modal');
   let overlay = document.createElement("div");
@@ -8,29 +8,29 @@ function showModal(){
   overlay.setAttribute("class", "modal-overlay");
   modal.parentNode.insertBefore(overlay, modal); 
 }
-//ocultar modal
+//hide modal
 function hideModal(){
   let modal = document.querySelector('.modal');
   let overlay = document.querySelector(".modal-overlay");
   modal.classList.remove("modal-in");
   overlay.remove(); 
 }
-//template del producto
+//product template
 function productTemplate(producto)
 {
   let image = "",
-      descuento = "";
-  //Verificar existencia de la imagen del producto
+      discount = "";
+  //Does the product exist?
   if(!producto.url_image){
     image = "img/default.png";
   }else{
     image = producto.url_image;
   }
-  //Verificar descuento
+  //Discount
   if(producto.discount=="0"){
-    descuento="";
+    discount="";
   }else{
-    descuento = '<p class="product-discount">'+producto.discount+'% dcto</p>'; 
+    discount = '<p class="product-discount">'+producto.discount+'% dcto</p>'; 
   }
   return  (`
     <div class="product-card ${producto.name_category.replace(" ", "_")}">
@@ -38,7 +38,7 @@ function productTemplate(producto)
         <div class="card-content">
           <p class="product-category">${producto.name_category} </p>
           <h2 class="product-title">${producto.name}</h2>
-          ${descuento}
+          ${discount}
           <div class="add-to-cart">
             <p class="product-price">$${producto.price}</p>
             <a class="btn">Agregar</a>
@@ -46,7 +46,9 @@ function productTemplate(producto)
         </div>
     </div>`);
 }
-//template categorias
+
+//Category templates
+
 function categoryTemplate(category)
 {
   return `

@@ -13,29 +13,35 @@ async function load()
   }
   const productList = await getProduct(`${window.location.href}api`);
   await setData();
-  let filtros = [];
-  //Llenar grilla con productos
+  let filter = [];
+
+  //Fill with products
+
   productList.forEach(
       (product) => {
         const HTMLString = productTemplate(product);
         const content = document.querySelector("#content");
         content.innerHTML += HTMLString;
         let category = product.name_category.replace(" ", "_")
-        if( filtros.indexOf(category) === -1) 
+        if( filter.indexOf(category) === -1) 
         { 
-          filtros.push(category)
+          filter.push(category)
         }
       }
   );
-  //Llenar filtros
-  filtros.forEach(
+
+  //Fillters 
+
+  filter.forEach(
     (category)=>{
       const HTMLString = categoryTemplate(category);
       const content = document.querySelector("#sidebar ul");
       content.innerHTML += HTMLString;
     }
-  )
+  );
+
   //filtrar categoria
+
   function hide(elems){
     elems.forEach(item => item.style.display = "none");
   }
@@ -46,8 +52,10 @@ async function load()
     let show_elems = document.querySelectorAll('.'+item.getAttribute('data-category'));
     show_elems.forEach(el => {el.style.display = "block"})
   }));
-  //activar buscar
-  let search = document.querySelectorAll('.seacrh')
+
+  //Search activate
+  
+  let search = document.querySelectorAll('.search')
   search.forEach(
     item=>{
       item.addEventListener('click', (e)=>{
@@ -64,15 +72,20 @@ async function load()
         return false;
       })
     }
-  )
-  //Buscador 
+  );
+
+  //Searcher 
+
   let buscar = document.querySelector('.buscar');
   buscar.addEventListener('click', async  (e)=>{
-    let filtros = [];
-    let nombre_producto = document.querySelector('.nombre_product');
-    const searchList = await getProduct(`${window.location.href}api/${nombre_producto.value}`);
+    let filter = [];
+    let product_name = document.querySelector('.product_name');
+    const searchList = await getProduct(`${window.location.href}api/${product_name.value}`);
     await setData();
-    //Llenar grilla con productos
+
+
+    //Products
+
     if(searchList.length > 0)
     {
       searchList.forEach(
@@ -81,14 +94,16 @@ async function load()
           const content = document.querySelector("#content");
           content.innerHTML += HTMLString;
           let category = product.name_category.replace(" ", "_")
-          if( filtros.indexOf(category) === -1) 
+          if( filter.indexOf(category) === -1) 
           { 
-            filtros.push(category)
+            filter.push(category)
           }
         }
       );
-      //Llenar filtros
-      filtros.forEach(
+
+      //Fillters
+
+      filter.forEach(
         (category)=>{
           const HTMLString = categoryTemplate(category);
           const content = document.querySelector("#sidebar ul");
@@ -98,7 +113,7 @@ async function load()
     }
     else{
       const content = document.querySelector("#content");
-      content.innerHTML += 'Tu búsqueda no arrojó resultado, prueba con otro nombre';
+      content.innerHTML += 'Not found!, try another thing :/';
     }
     hideModal();
     e.preventDefault()
