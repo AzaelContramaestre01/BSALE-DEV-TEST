@@ -12,6 +12,10 @@ html,body
 }
 body{
   font-size: 1rem;
+  background: #D3CCE3;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #E9E4F0, #D3CCE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 body h2{
   margin-bottom: 20px;
@@ -27,7 +31,10 @@ nav
 {
   height: 64px;
   color: #fff;
-  background-color: #35a4e5;
+  background: #1a2a6c;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   width: 100%;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
 }
@@ -76,6 +83,7 @@ nav .nav-container ul li a img
 main{
   margin-top: 80px;
 }
+
 .modal{
   display: block;
   border-radius: 5px;
@@ -84,7 +92,6 @@ main{
   z-index: -1;
   top: 50%;
   left: 50%;
-  background: #fff;
   width: 60vw;
   height: 150px;
   transform: translate(-50%, -50%);
@@ -125,6 +132,9 @@ main{
   width: 90%;
   margin: 0 auto;
   padding: 20px;
+  background: #D3CCE3;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #E9E4F0, #D3CCE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 #sidebar
 {
@@ -137,6 +147,9 @@ main{
   position: relative;
   padding: 30px;
   max-height: 300px;
+  background: #ffffff;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #E9E4F0, #f5f4f7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 #sidebar ul
 {
@@ -153,7 +166,10 @@ main{
   padding: 0 20px;
   width: 80vw;
   max-width: 800px;
-  justify-content: space-around;
+  justify-content: space-around;background: #ffffff;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #E9E4F0, #f5f4f7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
 }
 #content .product-card
 {
@@ -196,15 +212,17 @@ main{
   text-align: right;
   padding: 5px 4px;
   padding-right: 15px;
-  background-color: #e53935;
+  background-color: #5b35e5;
   color: #ffffff;
   text-transform: uppercase;
   font-size: 0.8rem;
+  font-weight: 400;
 }
 #content .product-card .card-content .product-category {
   font-style: italic;
   font-size: 0.8rem;
-  color: #989898;
+
+  color: #be6d2a;
   text-align: right;
   padding-bottom: 10px;
   text-transform: uppercase;
@@ -218,7 +236,7 @@ main{
 .btn {
   text-decoration: none;
   color: #fff;
-  background-color: #43a047;
+  background-color: #5b35e5;
   text-align: center;
   letter-spacing: .5px;
   transition: background-color .2s ease-out;
@@ -261,5 +279,5 @@ main{
   margin: 0;
   width: 180px;
   border: none;
-  border-bottom: 1px solid #4d4d4d;
+  border-bottom: 1px solid #5b35e5;
 }
