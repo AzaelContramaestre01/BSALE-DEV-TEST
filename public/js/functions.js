@@ -1,5 +1,5 @@
 'use strict';
-//show modal
+//mostrar modal
 function showModal(){
   let modal = document.querySelector('.modal');
   let overlay = document.createElement("div");
@@ -8,25 +8,25 @@ function showModal(){
   overlay.setAttribute("class", "modal-overlay");
   modal.parentNode.insertBefore(overlay, modal); 
 }
-//hide modal
+//ocultar modal
 function hideModal(){
   let modal = document.querySelector('.modal');
   let overlay = document.querySelector(".modal-overlay");
   modal.classList.remove("modal-in");
   overlay.remove(); 
 }
-//product template
+//template del producto
 function productTemplate(producto)
 {
   let image = "",
       discount = "";
-  //Does the product exist?
+  //Verificar existencia de la imagen del producto
   if(!producto.url_image){
     image = "img/default.png";
   }else{
     image = producto.url_image;
   }
-  //Discount
+  //Verificar descuento
   if(producto.discount=="0"){
     discount="";
   }else{
@@ -47,7 +47,7 @@ function productTemplate(producto)
     </div>`);
 }
 
-//Category templates
+//template categorias
 
 function categoryTemplate(category)
 {

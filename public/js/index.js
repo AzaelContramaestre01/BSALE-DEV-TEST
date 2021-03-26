@@ -15,7 +15,7 @@ async function load()
   await setData();
   let filter = [];
 
-  //Fill with products
+  //Llenar grilla con productos
 
   productList.forEach(
       (product) => {
@@ -30,7 +30,7 @@ async function load()
       }
   );
 
-  //Fillters 
+  //Llenar filtros
 
   filter.forEach(
     (category)=>{
@@ -53,7 +53,7 @@ async function load()
     show_elems.forEach(el => {el.style.display = "block"})
   }));
 
-  //Search activate
+ //activar buscar
   
   let search = document.querySelectorAll('.search')
   search.forEach(
@@ -74,7 +74,7 @@ async function load()
     }
   );
 
-  //Searcher 
+ //Buscador 
 
   let buscar = document.querySelector('.buscar');
   buscar.addEventListener('click', async  (e)=>{
@@ -100,8 +100,7 @@ async function load()
           }
         }
       );
-
-      //Fillters
+//Llenar filtros
 
       filter.forEach(
         (category)=>{
